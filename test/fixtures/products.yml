@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Brand: MyString
+  Product_Name: MyString
+  Features: MyString
+  Information: MyString
+  Performance_Levels: MyString
+  Signal_Processing_Gain: MyString
+  Hearing_Programs: 1
+
+two:
+  Brand: MyString
+  Product_Name: MyString
+  Features: MyString
+  Information: MyString
+  Performance_Levels: MyString
+  Signal_Processing_Gain: MyString
+  Hearing_Programs: 1

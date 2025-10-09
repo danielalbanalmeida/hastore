@@ -1,0 +1,52 @@
+<%= form_with(model: product) do |form| %>
+  <% if product.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+      <ul>
+        <% product.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :Brand, style: "display: block" %>
+    <%= form.text_field :Brand %>
+  </div>
+
+  <div>
+    <%= form.label :Product_Name, style: "display: block" %>
+    <%= form.text_field :Product_Name %>
+  </div>
+
+  <div>
+    <%= form.label :Features, style: "display: block" %>
+    <%= form.text_field :Features %>
+  </div>
+
+  <div>
+    <%= form.label :Information, style: "display: block" %>
+    <%= form.text_field :Information %>
+  </div>
+
+  <div>
+    <%= form.label :Performance_Levels, style: "display: block" %>
+    <%= form.text_field :Performance_Levels %>
+  </div>
+
+  <div>
+    <%= form.label :Signal_Processing_Gain, style: "display: block" %>
+    <%= form.text_field :Signal_Processing_Gain %>
+  </div>
+
+  <div>
+    <%= form.label :Hearing_Programs, style: "display: block" %>
+    <%= form.number_field :Hearing_Programs %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
