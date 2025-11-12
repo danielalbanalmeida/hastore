@@ -1,10 +1,28 @@
 Rails.application.routes.draw do
+
+  mount Avo::Engine, at: "/admin"
+
+
+  get "audiograms/manage"
   get "dashboard/index"
+
   devise_for :users
+
   resources :products
+
   #get "home/index"
   get 'home/about'
   root "home#index"
+
+  get 'audiograms/manage', to: 'audiograms#manage'
+  post 'audiograms', to: 'audiograms#create'
+  delete 'logout', to: 'sessions#destroy'  # only if not already defined
+
+
+  get 'audiograms/analysis', to: 'audiograms#analysis'
+
+
+
 
   get "/dashboard", to: "dashboard#index"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
