@@ -7,6 +7,8 @@ Includes user authentication with **Devise**.
 - 🔐 **Secure authentication** using Devise (sign up, login, logout).
 - 🧱 **Protected CRUD** accessible only to authenticated users.
 - 🚫 **URL protection:** routes cannot be accessed without authentication.
+- ⚡ Advanced Admin Panel built with Avohq for super-user management of all data.
+- 🛡️ Role-Based Authorization using Pundit to ensure only users with the admin:true flag can access the admin panel.
 
 ## 📦 Installation & Setup
 
@@ -44,6 +46,27 @@ Protected routes use:
 before_action :authenticate_user!
 
 This ensure that no one can access the main routes without authentication.
+
+⚡ Admin Panel
+
+This project includes a powerful admin panel built with Avohq and secured by Pundit.
+
+Accessing the Panel
+
+  1.  Start the server (rails server).
+  
+  2.  Log in with the admin user credentials.
+  
+  3.  Visit http://localhost:3000/admin
+
+How it Works
+
+  - Authentication: The panel is protected by the authenticate_with block in config/initializers/avo.rb, which uses Devise's current_user and checks the admin? status.
+
+  - Authorization: Pundit policies (like app/policies/avo/dashboard_policy.rb and app/policies/application_policy.rb) are used to check if the current_user.admin? flag is true for every action.
+
+  - Non-admin users who try to access /admin will be redirected to the root path.
+
 
 📁 Basic Structure
 
