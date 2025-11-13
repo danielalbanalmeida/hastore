@@ -88,6 +88,7 @@ production:
   # This line is key! It tells Rails to use the URL provided by Render/Railway.
   url: <%= ENV["DATABASE_URL"] %>
 
+  # 👇 ADD TWO SPACES to these three lines 👇
   cable:
     adapter: postgresql
     url: <%= ENV["DATABASE_URL"] %>
