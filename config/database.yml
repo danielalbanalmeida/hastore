@@ -81,14 +81,11 @@ test:
 # for a full overview on how database connection configuration can be specified.
 #
 production:
-  <<: *default
-  adapter: postgresql
-  encoding: unicode
-  pool: 5
-  # This line is key! It tells Rails to use the URL provided by Render/Railway.
-  url: <%= ENV["DATABASE_URL"] %>
-
-  # 👇 ADD TWO SPACES to these three lines 👇
+  primary:
+    adapter: postgresql
+    encoding: unicode
+    pool: 5
+    url: <%= ENV["DATABASE_URL"] %>
   cable:
     adapter: postgresql
     url: <%= ENV["DATABASE_URL"] %>
