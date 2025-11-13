@@ -7,3 +7,11 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+# db/seeds.rb
+
+if Rails.env.production?
+  unless User.exists?(email: "admin@example.com")
+    User.create!(email: "admin@example.com", password: "admin25xd*", admin: true)
+    puts "Admin user created!"
+  end
+end
